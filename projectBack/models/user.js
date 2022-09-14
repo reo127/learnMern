@@ -54,7 +54,7 @@ userSchema.virtual('password')
 
 
 
-userSchema.method = {
+userSchema.methods = {
     // Checks ths hashed password is same or not
     authenticate: function(plainPassword){
         return this.securePassword(plainPassword) === this.encry_password
@@ -75,4 +75,4 @@ userSchema.method = {
 
 
 
-module.exports = mongoose.Model("User", userSchema);
+module.exports = mongoose.model("User", userSchema);
