@@ -5,9 +5,9 @@ const { signout, signup } = require("../controllers/auth");
 
 router.post(
   "/singup",
-//   check("name", "Name Should be gretter then 3").isLength({ min: 3 }),
-//   check("email", "Emali is require").isEmail,
-//   check("password", "Name Should be gretter then 3").isLength({ min: 3 }),
+  check('name').isLength({ min: 3 }).withMessage('must be at least 3 chars long'),
+  check('email').isEmail().withMessage('Email is require'),
+  check('password').isLength({ min: 3 }).withMessage('password must be at least 3 chars long'),
   signup
 );
 router.get("/singout", signout);
